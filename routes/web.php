@@ -42,6 +42,5 @@ Route::middleware(['auth'])->group(function(){
   Route::prefix('/admin')->group(function(){
     Route::get('/', [AdminController::class, 'index']);
     Route::resource('articles', ArticleController::class);
-    Route::post('/checkSlug', [ArticleController::class, 'checkSlug']);
   });
 });
