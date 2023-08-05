@@ -1,7 +1,12 @@
 <template>
   <AdminLayout>
     <!-- Card Section -->
-    <div class="max-w-4xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <div class="max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto">
+      <!-- <Link @click.prevent="back" class="inline-block p-2 rounded-full bg-slate-300 mb-8">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+        </svg>
+      </Link> -->
       <form @submit.prevent="storeArticle">
         <!-- Card -->
         <div class="bg-white rounded-xl shadow dark:bg-slate-900">
@@ -64,14 +69,23 @@
   import AdminLayout from '../../../Layout/AdminLayout.vue'
   import { reactive } from 'vue';
   import { Inertia } from '@inertiajs/inertia';
+  import { Link } from '@inertiajs/inertia-vue3';
   // import { router } from '@inertiajs/vue3'
 
   export default {
     components: {
       AdminLayout,
+      Link
     },
+
     props: {
       categories: Array,
+    },
+
+    methods: {
+      back(){
+        window.history.back();
+      }
     },
 
     setup(){
@@ -80,7 +94,6 @@
         category_id: '',
         description: '',
       })
-
 
       const storeArticle = () => {
         Inertia.post('/admin/articles', {

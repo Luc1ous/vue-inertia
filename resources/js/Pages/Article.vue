@@ -41,7 +41,7 @@
         <!-- Content -->
         <div class="space-y-5 md:space-y-8">
           <div class="space-y-3">
-            <h2 class="text-2xl font-bold md:text-3xl dark:text-white">{{ article.title }}</h2>
+            <h2 class="text-2xl font-bold md:text-5xl dark:text-white">{{ article.title }}</h2>
 
             <p class="text-lg text-gray-800 dark:text-gray-200 whitespace-pre-line">{{ article.description }}</p>
           </div>

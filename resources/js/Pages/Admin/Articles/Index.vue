@@ -38,14 +38,6 @@
                   <th scope="col" class="px-6 py-3 text-left">
                     <a class="group inline-flex items-center gap-x-2" href="#">
                       <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                        Description
-                      </span>
-                    </a>
-                  </th>
-
-                  <th scope="col" class="px-6 py-3 text-left">
-                    <a class="group inline-flex items-center gap-x-2" href="#">
-                      <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
                         Slug
                       </span>
                     </a>
@@ -77,13 +69,6 @@
                     <div class="block relative z-10">
                       <div class="px-6 py-2">
                         <p class="text-sm text-gray-500">{{ article.title }}</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="h-px w-72 min-w-[18rem]">
-                    <div class="block relative z-10">
-                      <div class="px-6 py-2">
-                        <p class="text-sm text-gray-500">{{ article.description.substring(0, 100)+'...' }}</p>
                       </div>
                     </div>
                   </td>
@@ -130,7 +115,7 @@
 
             <!-- Footer -->
             <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t border-gray-200 dark:border-gray-700">
-              <div class="">
+              <div class="" v-if="articles.length > 0">
                 <Pagination :links="articles.links" />
               </div>
             </div>
