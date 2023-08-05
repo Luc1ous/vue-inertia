@@ -1,4 +1,4 @@
-<template>
+<template class="font-albertSans">
   <div class="bg-gray-50 dark:bg-slate-900">
     <header class="sticky top-0 inset-x-0 flex flex-wrap sm:justify-start sm:flex-nowrap z-[48] w-full bg-white border-b text-sm py-2.5 sm:py-4 lg:pl-64 dark:bg-gray-800 dark:border-gray-700">
       <nav class="flex basis-full items-center w-full mx-auto px-4 sm:px-6 md:px-8" aria-label="Global">
@@ -87,6 +87,7 @@
 
       <nav class="hs-accordion-group p-6 w-full flex flex-col flex-wrap" data-hs-accordion-always-open>
         <ul class="space-y-1.5">
+          <div class="text-sm text-gray-600">Dashboard</div>
           <li>
             <Link 
             class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900 dark:text-white" 
@@ -99,6 +100,7 @@
               Dashboard
             </Link>
           </li>
+          <div class="text-sm text-gray-600">Articles</div>
           <li>
             <Link class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900 dark:text-white" :class="{'bg-gray-100 dark:bg-gray-900' : $page.url.startsWith('/admin/articles')}" 
               href="/admin/articles">
@@ -108,7 +110,7 @@
                 Articles
             </Link>
           </li>
-          <li v-if="$page.props.auth.user.role == 'admin'">
+          <li>
             <Link class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900 dark:text-white" :class="{'bg-gray-100 dark:bg-gray-900' : $page.url.startsWith('/admin/categories')}" 
               href="/admin/categories">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="16" height="16">
@@ -118,6 +120,36 @@
                 Categories
             </Link>
           </li>
+          <div class="text-sm text-gray-600">Admin</div>
+          <div v-if="$page.props.auth.user.role == 'admin'" class="space-y-1.5">
+            <li>
+              <Link class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900 dark:text-white" :class="{'bg-gray-100 dark:bg-gray-900' : $page.url.startsWith('/admin/users')}" 
+                href="/admin/users">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                </svg>
+                Users
+              </Link>
+            </li>
+            <li>
+              <Link class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900 dark:text-white" :class="{'bg-gray-100 dark:bg-gray-900' : $page.url.startsWith('/admin/roles')}" 
+                href="/admin/roles">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5" />
+                </svg>
+                  Roles
+              </Link>
+            </li>
+            <li>
+              <Link class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900 dark:text-white" :class="{'bg-gray-100 dark:bg-gray-900' : $page.url.startsWith('/admin/permissions')}" 
+                href="/admin/permissions">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33" />
+                </svg>
+                Permissions
+              </Link>
+            </li>
+          </div>
         </ul>
       </nav>
     </div>

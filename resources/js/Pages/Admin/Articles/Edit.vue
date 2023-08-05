@@ -52,10 +52,13 @@
             </div>
             <!-- End Grid -->
 
-            <div class="mt-5">
-              <button type="submit" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
-                Submit Article
+            <div class="mt-5 space-x-4">
+              <button type="submit" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-green-500 text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
+                Update Article
               </button>
+              <Link @click.prevent="back" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-gray-500 text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-all text-sm dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-offset-gray-800">
+                Cancel
+              </Link>
             </div>
           </div>
         </div>
@@ -70,12 +73,20 @@
   import AdminLayout from '../../../Layout/AdminLayout.vue'
   import { reactive } from 'vue';
   import { Inertia } from '@inertiajs/inertia';
-  // import { router } from '@inertiajs/vue3'
+  import { Link } from '@inertiajs/inertia-vue3';
 
   export default {
     components: {
       AdminLayout,
+      Link,
     },
+
+    methods: {
+      back(){
+        window.history.back()
+      },  
+    },
+
     props: {
       article: Object,
       categories: Array,

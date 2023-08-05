@@ -14,10 +14,13 @@
                   Articles
                 </h2>
                 <p class="text-sm text-gray-600 dark:text-gray-400">
-                  Create articles, edit, and delete.
+                  Create, edit, and delete articles.
                 </p>
-                <Link href="/admin/articles/create" type="button" class="mt-5 py-3 px-10 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 transition-all text-sm">
+                <Link href="/admin/articles/create" type="button" class="mt-5 py-3 px-6 inline-flex justify-between items-center gap-2 rounded-md border border-transparent font-semibold bg-slate-900 text-white hover:bg-slate-950 transition-all text-sm">
                   Create Article
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                  </svg>
                 </Link>
               </div>
             </div>
